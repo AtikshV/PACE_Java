@@ -5,7 +5,8 @@ import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import java.awt.event.*;
 
 
 
@@ -15,6 +16,8 @@ public class swingGUI {
 
     swingGUI() {
         f = new JFrame(); 
+        FlatLightLaf.setup(); 
+
 
         f.setTitle("JBA Online Banking");
 
@@ -36,10 +39,19 @@ public class swingGUI {
         f.add(w);
         f.add(c);
 
+
         JTextField t1 = new JTextField("Enter amount"); 
         t1.setBounds(130, 300, 100, 40);
         JButton b = new JButton("Submit"); 
         b.setBounds(130, 350, 100, 40);
+        
+       
+
+        b.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e) { 
+                t1.setText("Amount accepted");
+            } 
+          } );
         
         f.add(t1); 
         f.add(b);
