@@ -1,11 +1,11 @@
 package bankapp;
 import java.util.Scanner;
 public class bankApp {
+    // static bankAccount account;
     public static void main(String[] args) {
-        new swingGUI(); 
+        bankAccount account = new bankAccount(); 
+        // new swingGUI(account); 
 
-        bankAccount account; 
-        account = new bankAccount(); 
 
         bankAccount aliceAccount; 
         aliceAccount = new bankAccount(); 

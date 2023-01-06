@@ -5,18 +5,20 @@ import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import java.awt.event.*;
 
 
 
 
 public class swingGUI {
+    public static void main(String[] args) {
+        new swingGUI(); 
+    }
     JFrame f; 
 
     swingGUI() {
         f = new JFrame(); 
-        FlatLightLaf.setup(); 
+        bankAccount account = new bankAccount(); 
 
 
         f.setTitle("JBA Online Banking");
@@ -34,6 +36,12 @@ public class swingGUI {
         JButton c = new JButton("Check Balance");
         c.setBounds(180, 150, 120, 40);
 
+        JLabel label = new JLabel();
+        label.setBounds(50, 400, 300, 40);
+        f.add(label); 
+        
+
+
         f.add(n);
         f.add(d);
         f.add(w);
@@ -47,11 +55,62 @@ public class swingGUI {
         
        
 
-        b.addActionListener(new ActionListener() { 
-            public void actionPerformed(ActionEvent e) { 
-                t1.setText("Amount accepted");
-            } 
-          } );
+
+        
+        d.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                label.setText("Please enter an amount to deposit. ");
+                b.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println(t1.getText() + " " + account.getBalance());
+                        try {
+                            account.deposit(Integer.parseInt(t1.getText()));                            
+                            label.setText("you deposited $" + t1.getText() + " for a total balance of $" + account.getBalance());
+
+                        } catch (Exception ee) {
+                            // TODO: handle exception
+                            label.setText("Error");
+                        }
+                        
+                    }
+                });
+                
+            }
+        });
+
+        w.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                label.setText("Please enter an amount to withdraw. ");
+                b.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println(t1.getText() + " " + account.getBalance());
+                        try {
+                            account.withdraw(Integer.parseInt(t1.getText()));                            
+                            label.setText("you withdrawed $" + t1.getText() + " for a total balance of $" + account.getBalance());
+
+                        } catch (Exception ee) {
+                            // TODO: handle exception
+                            label.setText("Error");
+                        }
+                                               
+                    }
+                });
+                
+            }
+        });
+
+
+        c.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                account.getBalance();
+                label.setText("Your balance is: $" + account.getBalance());
+                
+                
+            }
+        });
+
+
+
         
         f.add(t1); 
         f.add(b);
@@ -69,5 +128,6 @@ public class swingGUI {
 
 
     }
+
     
 }
