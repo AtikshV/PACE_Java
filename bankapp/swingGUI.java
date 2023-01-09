@@ -46,6 +46,10 @@ public class swingGUI {
         t1.setBounds(130, 300, 100, 40);
         b = new JButton("Submit"); 
         b.setBounds(130, 350, 100, 40);
+
+        JComboBox<String> jBox = new JComboBox<String>();
+
+
         
        
         f.add(n);

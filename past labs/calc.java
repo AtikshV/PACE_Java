@@ -1,8 +1,5 @@
 import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import javax.swing.JOptionPane;
+
 
 public class calc {
 
@@ -40,6 +37,7 @@ public class calc {
         }
 
         System.out.println("Your answer is: " + ans);
+        in.close();
 
     }
 }

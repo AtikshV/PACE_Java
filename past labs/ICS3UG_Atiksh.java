@@ -24,7 +24,7 @@ public class ICS3UG_Atiksh {
         
         float m = x + w; 
         
-         
+         System.out.println(e + S + m);
         
         x=10; 
         

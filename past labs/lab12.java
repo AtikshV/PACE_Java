@@ -1,5 +1,4 @@
-import java.text.ParseException;
-import java.util.Arrays;
+
 
 class arr {
     String[] nameArray = {"Jan", "Jen", "Jin", "Jon", "Jun" }; 

@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 
@@ -23,7 +23,7 @@ class flight {
             try {
                 way = Integer.parseInt(sc.nextLine());     
             } catch (Exception e) {
-                // TODO: handle exception
+                
                 way = 4; 
             }
         }
@@ -45,7 +45,6 @@ class flight {
             try {
                 line = Integer.parseInt(sc.nextLine());     
             } catch (Exception e) {
-                // TODO: handle exception
                 line = 9; 
             }
 
