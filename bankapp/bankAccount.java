@@ -1,5 +1,4 @@
 package bankapp; 
-import javax.swing.*;
 public class bankAccount {
     private int balance; 
 
