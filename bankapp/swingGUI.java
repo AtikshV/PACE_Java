@@ -48,8 +48,7 @@ public class swingGUI {
         b.setBounds(130, 350, 100, 40);
 
         JComboBox<String> jBox = new JComboBox<String>();
-
-
+        jBox.setBounds(300, 50, 010, 010);;
         
        
         f.add(n);
@@ -60,6 +59,7 @@ public class swingGUI {
         f.add(l); 
         f.add(b); 
         f.add(t1); 
+        f.add(jBox); 
         
         f.setSize(400, 500);
         f.setLayout(null);
