@@ -100,8 +100,8 @@ public class Foodams extends JFrame {
         JPCenter.add(CMushrooms);
         JPCenter.add(CBacon);
 
-        JBOk.setBounds(200, 200, 100, 30);
-        JBClear.setBounds(200, 200, 100, 30);
+        JBOk.setBounds(195, 350, 100, 30);
+        JBClear.setBounds(300, 350, 100, 30);
         JPCenter.add(JBOk); 
         JPCenter.add(JBClear); 
 
