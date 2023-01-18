@@ -30,6 +30,7 @@ public class ccc {
             }
 
         }
+        
         System.out.println(grid);
         int choices = Integer.parseInt(data.get(2)); 
         System.out.println(choices);
