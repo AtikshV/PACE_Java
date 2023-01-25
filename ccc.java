@@ -56,7 +56,7 @@ public class ccc {
                 }
             }
         }
-        System.out.println(count);
+        System.out.println(count    );
 
 
     }
