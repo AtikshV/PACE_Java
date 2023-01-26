@@ -6,6 +6,9 @@ public class app {
         Boolean[] grid = {true}; 
         grid[0] = true; 
         System.out.println(grid[0]);
+
+
+        new gui(); 
     }
 
 }
