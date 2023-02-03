@@ -1,4 +1,4 @@
-package displayNum;
+
 import java.lang.Object;
 import java.awt.Component;
 import java.awt.Canvas;
@@ -20,7 +20,7 @@ import java.awt.Graphics;
 class canvas extends JFrame implements MouseListener, MouseMotionListener{ 
 
     //create canvas 
-    Canvas c; 
+    JPanel c; 
     JFrame frame; 
   
 
@@ -31,7 +31,7 @@ class canvas extends JFrame implements MouseListener, MouseMotionListener{
         super("canvas"); 
 
         //empty canvas 
-        c = new Canvas() {
+        c = new JPanel() {
             public void paint(Graphics g) {
 
             }
@@ -55,7 +55,7 @@ class canvas extends JFrame implements MouseListener, MouseMotionListener{
     
         Graphics g = c.getGraphics();
  
-        g.setColor(Color.red);
+        g.setColor(Color.BLACK);
  
         // get X and y position
         int x, y;
@@ -75,7 +75,7 @@ class canvas extends JFrame implements MouseListener, MouseMotionListener{
     
         Graphics g = c.getGraphics();
  
-        g.setColor(Color.magenta);
+        g.setColor(Color.BLACK);
  
         // get X and y position
         int x, y;
@@ -104,6 +104,7 @@ class canvas extends JFrame implements MouseListener, MouseMotionListener{
 
     public static void main(String[] args) {
         canvas c = new canvas(); 
+        System.out.println(c);
 
     }
 

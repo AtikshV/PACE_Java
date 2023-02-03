@@ -3,8 +3,8 @@ package displayNum;
 public class app {
     public static void main(String[] args) {
         int input = 1;
-        Boolean[] grid = {true}; 
-        grid[0] = true; 
+        Boolean[][] grid = {{true}}; 
+        grid[0][0] = true; 
         System.out.println(grid[0]);
 
 
