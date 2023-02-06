@@ -104,7 +104,7 @@ class canvas extends JFrame implements MouseListener, MouseMotionListener{
 
     public static void main(String[] args) {
         canvas c = new canvas(); 
-        System.out.println(c);
+        
 
     }
 

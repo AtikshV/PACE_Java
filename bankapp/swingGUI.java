@@ -20,7 +20,6 @@ public class swingGUI {
     String accountName; 
 
     swingGUI() {
-        //:TODO the ability to create multiple accounts and select one of them with a dropdown 
         f = new JFrame(); 
         bankAccount account = new bankAccount(); 
 
@@ -137,7 +136,6 @@ public class swingGUI {
                     t1.setVisible(false);                        
                 } catch (Exception ex) {
                     label.setText("Error");
-                    // TODO: handle exception
                 }
                 t1.setText(null);
             }

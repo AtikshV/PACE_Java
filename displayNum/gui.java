@@ -17,6 +17,9 @@ public class gui {
         f.getContentPane().setBackground(Color.black);
 
         f.setTitle("Test");
+
+        JTable t = new JTable(); 
+        
         
 
         f.setSize(400, 500);

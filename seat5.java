@@ -38,6 +38,7 @@ public class seat5 {
             }
             
         }
+        System.out.println(scores);
 // hello there
 
 
