@@ -16,16 +16,14 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.JPanel;
-
-
-
-
+import javax.swing.border.Border;
 import javax.swing.*;
 import javax.swing.JFrame;
 
 
 import java.awt.event.*;
 import java.awt.Graphics; 
+import java.awt.BorderLayout; 
 
 
 
@@ -91,14 +89,19 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         submit.setBounds(50, 100, 120, 40);
 
         JButton clear = new JButton("clear"); 
+        clear.setBounds(50, 100, 120, 40);
         
 
 
 
         p = new JPanel(); 
+
+        JPanel southPanel = new JPanel();
         p.setLayout(new BorderLayout());
         p.add(c, BorderLayout.CENTER);
-        p.add(submit, BorderLayout.SOUTH);
+        p.add(southPanel, BorderLayout.SOUTH);
+        southPanel.add(submit, BorderLayout.EAST);
+        southPanel.add(clear, BorderLayout.WEST);
 
         add(p);
         pack();
@@ -106,7 +109,11 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         setVisible(true); 
     
 
-
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize theme. Using fallback." );
+        }
         
         submit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -127,19 +134,35 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
             }
         }); 
 
+        clear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                c.repaint();
+                // g.clearRect(0, 0, c.getWidth(), c.getHeight());
+                g2.clearRect(0, 0, c.getWidth(), c.getHeight());
+
+                try {
+                    ImageIO.write(image, "png", new File("output.png"));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        
+
         //TODO: Add clear button to repaint
 
 
 
 
     }
+
     public void mouseClicked(MouseEvent e) {
 
     
         Graphics g = c.getGraphics();
  
-        g.setColor(Color.magenta);
-        g2.setColor(Color.magenta);
+        g.setColor(Color.white);
+        g2.setColor(Color.white);
  
         // get X and y position
         int x, y;
@@ -164,8 +187,8 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
     
         Graphics g = c.getGraphics();
  
-        g.setColor(Color.magenta);
-        g2.setColor(Color.magenta);
+        g.setColor(Color.white);
+        g2.setColor(Color.white);
 
  
         // get X and y position
