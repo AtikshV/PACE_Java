@@ -149,7 +149,27 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         });
         
 
-        //TODO: Add clear button to repaint
+        //TODO: resize the image 
+
+        try {       
+            
+            File ogFile =  new File("output.png");
+            BufferedImage ogImage = ImageIO.read(ogFile); 
+
+            int newWidth = 28; 
+            int newHeight = 28; 
+
+            BufferedImage resizedImage = new BufferedImage(newWidth, newHeight, ogImage.getType());
+            resizedImage.createGraphics().drawImage(ogImage, 0, 0, newWidth, newHeight, null);
+
+            File resizedImageFile = new File("resized.png");
+
+            ImageIO.write(resizedImage, "png", resizedImageFile);
+
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
 
 
