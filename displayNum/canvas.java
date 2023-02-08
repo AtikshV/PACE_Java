@@ -130,6 +130,28 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
                     ex.printStackTrace();
                 }
 
+                //TODO: resize the image 
+
+                try {       
+            
+                    File ogFile =  new File("output.png");
+                    BufferedImage ogImage = ImageIO.read(ogFile); 
+        
+                    int newWidth = 28; 
+                    int newHeight = 28; 
+        
+                    BufferedImage resizedImage = new BufferedImage(newWidth, newHeight, ogImage.getType());
+                    resizedImage.createGraphics().drawImage(ogImage, 0, 0, newWidth, newHeight, null);
+        
+                    File resizedImageFile = new File("resized.png");
+        
+                    ImageIO.write(resizedImage, "png", resizedImageFile);
+        
+        
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
         
             }
         }); 
@@ -138,7 +160,7 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
             public void actionPerformed(ActionEvent e) {
                 c.repaint();
                 // g.clearRect(0, 0, c.getWidth(), c.getHeight());
-                g2.clearRect(0, 0, c.getWidth(), c.getHeight());
+                g2.clearRect(0, 0, c.getWidth() + p.getWidth(), c.getHeight() + p.getHeight());
 
                 try {
                     ImageIO.write(image, "png", new File("output.png"));
@@ -149,27 +171,7 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         });
         
 
-        //TODO: resize the image 
 
-        try {       
-            
-            File ogFile =  new File("output.png");
-            BufferedImage ogImage = ImageIO.read(ogFile); 
-
-            int newWidth = 28; 
-            int newHeight = 28; 
-
-            BufferedImage resizedImage = new BufferedImage(newWidth, newHeight, ogImage.getType());
-            resizedImage.createGraphics().drawImage(ogImage, 0, 0, newWidth, newHeight, null);
-
-            File resizedImageFile = new File("resized.png");
-
-            ImageIO.write(resizedImage, "png", resizedImageFile);
-
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
 
 
 
@@ -217,8 +219,8 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         y = e.getY();
  
         // draw a Oval at the point where mouse is moved
-        g.fillOval(x, y, 7, 7);
-        g2.fillOval(x, y, 7, 7);
+        g.fillOval(x, y, 14, 14);
+        g2.fillOval(x, y, 14,14);
 
         // c.paint(g);
 

@@ -17,9 +17,13 @@ public class gui {
         f.getContentPane().setBackground(Color.black);
 
         f.setTitle("Test");
+        int row = 100; 
+        int col = 100;
 
-        JTable t = new JTable(); 
-        
+
+        int imgPxl[][] = new int[row][col]; 
+
+
         
 
         f.setSize(400, 500);
