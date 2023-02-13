@@ -5,6 +5,10 @@ import com.formdev.flatlaf.FlatLightLaf;
 
 import java.awt.Color;
 import java.awt.event.*;
+import java.awt.Graphics;
+
+
+
 
 public class gui {
 
@@ -17,13 +21,36 @@ public class gui {
         f.getContentPane().setBackground(Color.black);
 
         f.setTitle("Test");
-        int row = 100; 
-        int col = 100;
+        // int row = 4; 
+        int col = 2;
 
 
-        int imgPxl[][] = new int[row][col]; 
+        
+        Boolean grid[][] = {{true, true, true},
+                            {true, false, true},                      
+                            {true, false, true}, 
+                            {true, false, true}, 
+                            {true, true, true,}};
+       
+                            
+                            
+        
+        
+        
+        // if(imgPxl[0][0] == true) {
 
+        // }
 
+        for (Boolean[] row : grid) {
+            for (Boolean pixel : row) {
+                if (pixel) {
+                    System.out.print("#");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
         
 
         f.setSize(400, 500);
