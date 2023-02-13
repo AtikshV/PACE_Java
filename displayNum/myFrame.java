@@ -79,13 +79,13 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         
 
         add(c); 
-        setSize(400, 700);
+        setSize(400, 300);
         // show();  
         // setVisible(true);
         
         // f = new JFrame(); 
 
-        JButton submit = new JButton("Submit"); 
+        JButton submit = new JButton("Save"); 
         submit.setBounds(50, 100, 120, 40);
 
         JButton clear = new JButton("clear"); 
@@ -105,7 +105,7 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
 
         add(p);
         pack();
-        setSize(400, 700);
+        setSize(400, 300);
         setVisible(true); 
     
 
@@ -219,12 +219,10 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         y = e.getY();
  
         // draw a Oval at the point where mouse is moved
-        g.fillOval(x, y, 35, 35);
-        g2.fillOval(x, y, 35,35);
+        g.fillOval(x, y, 14, 14);
+        g2.fillOval(x, y, 14,14);
 
-        // g.fillArc(x, y, 35, 35, 0, 30);
-        // g2.fillArc(x, y, 35, 35, 0, 30);
-                // c.paint(g);
+        // c.paint(g);
 
 
 
@@ -249,7 +247,6 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
     }
 
     public static void main(String[] args) {
-        myFrame c = new myFrame(); 
 
     }
 
