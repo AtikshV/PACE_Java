@@ -79,7 +79,7 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         
 
         add(c); 
-        setSize(400, 300);
+        setSize(500, 500);
         // show();  
         // setVisible(true);
         
@@ -219,8 +219,8 @@ class myFrame extends JFrame implements MouseListener, MouseMotionListener{
         y = e.getY();
  
         // draw a Oval at the point where mouse is moved
-        g.fillOval(x, y, 14, 14);
-        g2.fillOval(x, y, 14,14);
+        g.fillOval(x, y, 28, 28);
+        g2.fillOval(x, y, 28,28);
 
         // c.paint(g);
 
